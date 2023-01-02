@@ -33,6 +33,10 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
 
     private val onItemListener by lazy {
         object : Listener {
+            override fun onItemClick(itemAge: ItemAge) {
+                sharedViewModel.setValue(itemAge)
+            }
+
             override fun onLongItemClick(items: List<ItemAge>, itemAge: ItemAge) {
                 favoriteViewModel.updateDeleteList(items, itemAge)
                 showDeleteBtn(true)
@@ -46,7 +50,6 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
     }
 
     private var adapter = FavoriteAgeAdapter(onItemListener)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +67,8 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
     override fun onResume() {
         super.onResume()
         showDeleteBtn(false)
+        adapter = FavoriteAgeAdapter(onItemListener)
+        binding.recyclerFavorite.adapter = adapter
         favoriteViewModel.runFlow()
     }
 
@@ -89,15 +94,17 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
             val itemSelected = adapter.itemSelectedList
             val items = adapter.items
 
-            adapter = FavoriteAgeAdapter(onItemListener)
-            binding.recyclerFavorite.adapter = adapter
             showDialog(
                 onPositiveButtonClick = {
+                    adapter = FavoriteAgeAdapter(onItemListener)
+                    binding.recyclerFavorite.adapter = adapter
                     favoriteViewModel.deleteItem(itemSelected, items)
                     Toast.makeText(requireContext(), getString(R.string.deleted), Toast.LENGTH_SHORT).show()
                     showDeleteBtn(false)
                 },
                 onNegativeButtonClick = {
+                    adapter = FavoriteAgeAdapter(onItemListener)
+                    binding.recyclerFavorite.adapter = adapter
                     favoriteViewModel.setDefaultState()
                     showDeleteBtn(false)
                 }

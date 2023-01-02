@@ -8,7 +8,6 @@ import com.go0ose.agedeterminant.AgeApplication
 import com.go0ose.agedeterminant.R
 import com.go0ose.agedeterminant.databinding.FragmentMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
-import javax.annotation.Resource
 import javax.inject.Inject
 
 class MainFragment : Fragment(R.layout.fragment_main) {
@@ -32,13 +31,12 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         initViewPager()
+        initObserver()
     }
 
     private fun initViewPager() {
 
         binding.viewPager.adapter = PageAdapter(requireActivity())
-
-        binding.tabLayout
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, pos ->
             when (pos) {
@@ -52,5 +50,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 }
             }
         }.attach()
+    }
+
+    private fun initObserver() {
+        sharedViewModel.itemAge.observe(viewLifecycleOwner) {
+            binding.viewPager.setCurrentItem(0, true)
+        }
     }
 }

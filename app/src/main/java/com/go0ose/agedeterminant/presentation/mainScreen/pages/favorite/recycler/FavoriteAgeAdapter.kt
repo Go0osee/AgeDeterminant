@@ -2,7 +2,6 @@ package com.go0ose.agedeterminant.presentation.mainScreen.pages.favorite.recycle
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.go0ose.agedeterminant.presentation.model.ItemAge
 
@@ -69,6 +68,9 @@ class FavoriteAgeAdapter(
         } else {
             if (items[position].isChecked) {
                 items[position].isChecked = false
+            }
+            holder.root.setOnClickListener {
+                listener.onItemClick(items[position])
             }
 
             holder.checkbox.visibility = View.GONE

@@ -128,6 +128,9 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                 }
             }
         }
+        sharedViewModel.itemAge.observe(viewLifecycleOwner) { itemAge ->
+            binding.searchView.setQuery(itemAge.name, true)
+        }
     }
 
     private fun replaceView(oldView1: View, oldView2: View, newView: View) {
