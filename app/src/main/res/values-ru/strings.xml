@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Предсказатель возраста</string>
+    <string name="main">Главная</string>
+    <string name="favorite">Избранное</string>
+    <string name="enter_a_name">Введите имя  для предсказания возраста</string>
+    <string name="add_to_favorites">Добавить в избранное</string>
+    <string name="delete">Удалить</string>
+    <string name="validation_error">Ошибка валидации</string>
+    <string name="error">Ошибка</string>
+    <string name="share">Привет, смотри! Примерный возраст для человека с именем</string>
+    <string name="years_old">лет</string>
+    <string name="server_error">Ошибка сервера</string>
+    <string name="added">Добавлено</string>
+    <string name="already_added">Уже добавлено в избранное</string>
+    <string name="deleted">Удалено</string>
+    <string name="delete_name">Удалить имя</string>
+    <string name="are_you_sure">Вы уверены что хотите удалить выбранное имя из избранных?</string>
+    <string name="no">Нет</string>
+    <string name="yes">Да</string>
+</resources>

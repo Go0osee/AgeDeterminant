@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.go0ose.agedeterminant.presentation.customView.LoadingView
+        android:id="@+id/loading"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:visibility="gone"
+        app:color="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/successResultConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView">
+
+        <com.go0ose.agedeterminant.presentation.customView.AgeTextView
+            android:id="@+id/ageResult"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="60dp"
+            app:circleColor="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:numberColor="@color/result_gray" />
+
+        <Button
+            android:id="@+id/addFavoriteBtn"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:gravity="center"
+            android:text="@string/add_to_favorites"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:textSize="14dp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@id/shareBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/shareBtn"
+            android:layout_width="68dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/green"
+            android:gravity="end"
+            android:text=" "
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_share"
+            app:iconGravity="textStart"
+            app:iconTint="@color/text_color"
+            app:layout_constraintBottom_toBottomOf="@id/addFavoriteBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/addFavoriteBtn"
+            app:layout_constraintTop_toTopOf="@id/addFavoriteBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enterNameConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/background_radius"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView">
+
+        <TextView
+            android:id="@+id/enterName"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/rubik_light"
+            android:gravity="center"
+            android:text="@string/enter_a_name"
+            android:textColor="@color/name_gray"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/background_radius"
+        android:inputType="textCapSentences"
+        android:imeOptions="actionGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

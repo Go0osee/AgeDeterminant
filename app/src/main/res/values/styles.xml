@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AgeTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/capsFalse</item>
+        <item name="tabRippleColor">@color/green</item>
+        <item name="tabIndicator">@color/green</item>
+        <item name="tabIndicatorColor">@color/dark_gray</item>
+        <item name="tabSelectedTextColor">@color/dark_gray</item>
+        <item name="tabTextColor">@color/gray</item>
+        <item name="tabUnboundedRipple">false</item>
+    </style>
+
+    <style name="capsFalse" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="checkbox" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@android:color/darker_gray</item>
+    </style>
+
+</resources>
